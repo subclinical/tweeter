@@ -35,3 +35,31 @@
 
   margin-left: 10px;
 }
+
+#nav-bar button {
+
+  height: 75%;
+
+  float: right;
+
+  border-radius: 5px;
+
+  background-color: #e8fdff;
+
+  color: #00a087;
+
+  margin-top: 10px;
+
+  border-color: #444444;
+
+  font-size: 1.5em;
+
+  padding: 10px;
+}
+
+#nav-bar button:hover {
+
+  filter: grayscale(100%);
+
+  color: #444444;
+}

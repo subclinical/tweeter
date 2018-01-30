@@ -48,13 +48,17 @@ body {
   background-color: #eee;
   /*height: 50px;*/
   padding: 10px;
-  font-size: 2em;
+  font-size: 1.5em;
+ }
+
+ article header img {
+  margin-right: 5px;
  }
 
  article header span {
   float: right;
-  font-size: 0.5em;
-  line-height: 3;
+  font-size: 0.6em;
+  line-height: 100%;
  }
 
  article p {
