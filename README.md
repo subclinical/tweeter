@@ -18,3 +18,9 @@ This repository is the starter code for the project: Students will fork and clon
 - Body-Parser
 - Chance
 - MongoDB
+
+## Screenshots
+
+!["Posting a tweet"](https://github.com/subclinical/tweeter/blob/master/Docs/Posting.png?raw=true)
+
+!["Viewing tweets"](https://github.com/subclinical/tweeter/blob/master/Docs/Posted.png?raw=true)
