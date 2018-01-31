@@ -33,6 +33,7 @@ body {
   padding-bottom: 100px;
  }
 
+ /*article css*/
  article {
   background-color: #ffffff;
   border-radius: 5px;
@@ -41,12 +42,10 @@ body {
   border-width: 1px;
   margin: 2em 2em;
   filter: opacity(80%);
-/*  height: 160px;*/
  }
 
  article header {
   background-color: #eee;
-  /*height: 50px;*/
   padding: 10px;
   font-size: 1.5em;
  }
@@ -69,7 +68,6 @@ body {
  article footer {
   padding: 5px;
   font-size: 0.9em;
-  /*vertical-align: text-bottom;*/
  }
 
  article footer hr {
@@ -83,6 +81,7 @@ body {
   filter: opacity(0);
  }
 
+/*hover state css*/
 article:hover {
   filter: opacity(100%);
 }
