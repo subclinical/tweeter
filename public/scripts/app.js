@@ -6,15 +6,15 @@
 
 $(document).ready(function() {
 
-  //showing icons on mouseover
-  $('article').on({
-    mouseover: function() {
-      $(this).find('footer i').addClass('opacity');
-    },
-    mouseleave: function() {
-      $(this).find('footer i').removeClass('opacity');
-    }
-  });
+  // //showing icons on mouseover
+  // $('article').on({
+  //   mouseover: function() {
+  //     $(this).find('footer i').addClass('opacity');
+  //   },
+  //   mouseleave: function() {
+  //     $(this).find('footer i').removeClass('opacity');
+  //   }
+  // });
 
   $('#submit-tweet').on('click', function(event) {
     let msg = $(this).closest('form').find('textarea');
@@ -36,10 +36,10 @@ $(document).ready(function() {
         method: 'POST',
         data: query,
         success: function() {
+          updateTweets();
         }
       });
       $('form textarea').val('');
-      updateTweets();
     }
   });
 
@@ -101,7 +101,6 @@ function renderTweets(tweets) {
   tweets = tweets.reverse();
   for(let tweet of tweets) {
     let $tweet = createTweetElement(tweet);
-    console.log($tweet);
     $('#tweet-container').append($tweet);
   }
 }
