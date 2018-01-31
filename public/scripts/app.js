@@ -6,16 +6,6 @@
 
 $(document).ready(function() {
 
-  // //showing icons on mouseover
-  // $('article').on({
-  //   mouseover: function() {
-  //     $(this).find('footer i').addClass('opacity');
-  //   },
-  //   mouseleave: function() {
-  //     $(this).find('footer i').removeClass('opacity');
-  //   }
-  // });
-
   $('#submit-tweet').on('click', function(event) {
     let msg = $(this).closest('form').find('textarea');
     event.preventDefault();
@@ -40,9 +30,11 @@ $(document).ready(function() {
         }
       });
       $('form textarea').val('');
+      $(this).closest('form').find('.counter').text(140);
     }
   });
 
+  //toggle new-tweet section
   $('.compose').on('click', function(event) {
     $('.new-tweet').slideToggle('fast', function() {
       $(this).find('textarea').focus();
@@ -72,14 +64,6 @@ function loadTweets() {
 }
     loadTweets();
 
-// var $tweet = createTweetElement(tweetData);
-
-// Test / driver code (temporary)
-// console.log($tweet); // to see what it looks like
-});
-
-
-
 //render html article element with json data
 function createTweetElement(tweet) {
   let $tweet = $("<article>").addClass("tweet");
@@ -103,4 +87,8 @@ function renderTweets(tweets) {
     let $tweet = createTweetElement(tweet);
     $('#tweet-container').append($tweet);
   }
+
+
+
 }
+});
