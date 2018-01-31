@@ -43,6 +43,12 @@ $(document).ready(function() {
     }
   });
 
+  $('.compose').on('click', function(event) {
+    $('.new-tweet').slideToggle('fast', function() {
+      $(this).find('textarea').focus();
+    });
+  });
+
 //render tweets real time
 function updateTweets() {
   $.ajax({
