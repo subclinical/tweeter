@@ -6,19 +6,23 @@
 
 $(document).ready(function() {
 
+  //new tweet submission event handler
   $('#submit-tweet').on('click', function(event) {
     let msg = $(this).closest('form').find('textarea');
     event.preventDefault();
     console.log(msg.val().length);
+    //tweet too long
     if(msg.val().length > 140) {
       alert('Your tweet is too long!');
       console.log(msg.length);
       return;
     }
+    //no text input
     if(msg.val().length === 0) {
       alert('Really wish you\'d say something...');
       return;
     }
+    //valid tweet submitted
     if(msg.val().length <= 140 && msg.val().length > 0) {
       let query = msg.serialize();
       $.ajax({
@@ -29,6 +33,7 @@ $(document).ready(function() {
           updateTweets();
         }
       });
+      //clear textarea and counter upon submission
       $('form textarea').val('');
       $(this).closest('form').find('.counter').text(140);
     }
@@ -76,7 +81,6 @@ function createTweetElement(tweet) {
   $('<header>').text(tweet.user.name).appendTo($tweet).prepend(avatar).append(handle);
   $('<p>').text(tweet.content.text).appendTo($tweet);
   $('<footer>').text(date).appendTo($tweet).prepend('<hr>').append(icon3 + icon2 + icon1);
-  // $('.tweet-container').append($tweet);
   return $tweet;
 }
 
