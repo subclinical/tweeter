@@ -82,10 +82,19 @@ body {
  }
 
 /*hover state css*/
+ article footer .fa-heart:hover {
+  color: red;
+ }
+
 article:hover {
   filter: opacity(100%);
 }
 
 article:hover footer i {
+  filter: opacity(100%);
+}
+
+.red {
+  color: red;
   filter: opacity(100%);
 }

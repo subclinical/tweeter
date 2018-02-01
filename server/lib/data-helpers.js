@@ -19,6 +19,23 @@ module.exports = function makeDataHelpers(db) {
         callback(null, results);
         });
 
+    },
+
+    //Updates the like array of a tweet
+    updateLike: function(target, user, callback) {
+        if(db.collection('tweets').find({ $elemMatch: { tweetID: target, likedBy: { $not: user }} })) {
+            db.collection('tweets').update({ tweetID: target }, { $set: { likedBy: [user] }});
+        }
+        // else {
+        //     db.collection('tweets').update({ tweetID: target }, { $set: { likedBy: [user] }});
+        // }
+        callback(null, true);
+    },
+
+    //Remove user from array of likes
+    editLike: function(target, user, callback) {
+        db.collection('tweets').update({ tweetID: target }, { $pull: { likedBy: user }});
+        callback(null, true);
     }
   };
 }
