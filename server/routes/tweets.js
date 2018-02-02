@@ -42,6 +42,7 @@ module.exports = function(DataHelpers) {
     });
   });
 
+  //add current user to array of people who liked the tweet
   tweetsRoutes.post('/liked', function(req, res) {
     if(!req.body.id && !req.body.user) {
       res.status(400).send();
@@ -56,6 +57,7 @@ module.exports = function(DataHelpers) {
     });
   });
 
+  //updates liked array to remove current user from list
   tweetsRoutes.put('/liked', function(req, res) {
     if(!req.body.id && !req.body.user) {
       res.status(400).send();
@@ -66,6 +68,42 @@ module.exports = function(DataHelpers) {
         res.status(500).send();
       } else {
         res.status(201).send();
+      }
+    });
+  });
+
+  //user sign up
+  tweetsRoutes.post('/register', function(req, res) {
+    if(!req.body.user_id) {
+      res.status(400).send();
+      return;
+    }
+    let newUser = req.body;
+    console.log(newUser);
+    DataHelpers.signUp(newUser, (err) => {
+      if (err) {
+        res.status(500).send();
+      } else {
+        res.status(201).send();
+      }
+    });
+  });
+
+  //user sign in
+  tweetsRoutes.post('/login', function(req, res) {
+    if(!req.body) {
+      res.status(400).send();
+      return;
+    }
+    DataHelpers.logIn(req.body, (err, user) => {
+      if (err) {
+        res.status(500).send();
+      } else {
+        if(user) {
+          res.json(user);
+        } else {
+          res.send(null);
+        }
       }
     });
   });

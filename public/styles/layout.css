@@ -3,6 +3,13 @@
  * https://css-tricks.com/international-box-sizing-awareness-day/
  * Do not modify these two selectors, please
  */
+/*@media all and (max-width: 500px) {
+  .navigation {
+     On small screens, we are no longer using row direction but column
+    flex-direction: column;
+  }
+}*/
+
 html {
   box-sizing: border-box;
 }
@@ -84,6 +91,14 @@ body {
 /*hover state css*/
  article footer .fa-heart:hover {
   color: red;
+ }
+
+ article footer .fa-flag:hover {
+  color: #aaa;
+ }
+
+ article footer .fa-retweet:hover {
+  color: #aaa;
  }
 
 article:hover {

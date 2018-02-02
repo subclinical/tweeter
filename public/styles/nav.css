@@ -50,6 +50,8 @@
 
   margin-top: 10px;
 
+  margin-left: 10px;
+
   border-color: #444444;
 
   font-size: 1.5em;
@@ -57,9 +59,21 @@
   padding: 10px;
 }
 
+#nav-bar p {
+  float: right;
+
+  color: #FFFFFF;
+
+  vertical-align: text-bottom;
+}
+
 #nav-bar button:hover {
 
   filter: grayscale(100%);
 
   color: #444444;
+}
+
+.hidden {
+  display: none;
 }

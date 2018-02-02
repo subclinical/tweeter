@@ -13,6 +13,9 @@
     <!-- Nav Bar CSS -->
     <link rel="stylesheet" href="/styles/nav.css" type="text/css" />
 
+    <!-- UI CSS -->
+    <link rel="stylesheet" href="/styles/user.css" type="text/css" />
+
     <!-- New Tweet CSS -->
      <link rel="stylesheet" href="/styles/new-tweet.css" type="text/css" />
 
@@ -38,8 +41,36 @@
     <nav id="nav-bar">
       <img class="logo" src="/images/bird.png">
       <span class="header">Tweeter</span>
+      <button class="sign-out hidden">Log out</button>
+      <button class="sign-up">Register</button>
+      <button class="sign-in">Log in</button>
       <button class="compose"><i class="fa fa-pencil-square-o" aria-hidden="true"></i>Compose</button>
     </nav>
+
+    <!-- Side UI bar -->
+    <div id="user-nav">
+      <div id='register'>
+        <span class="reg-header"></span>
+        <form>
+          <input class="handle" placeholder="Username/Handle"></input>
+          <input class="name" placeholder="Full Name"></input>
+          <input class="password" type="password" placeholder="********"></input>
+          <button id="register-user">Register</button>
+        </form>
+      </div>
+      <div id='login'>
+        <span class="login-header"></span>
+        <form>
+          <input class="handle" placeholder="Username/Handle"></input>
+          <input class="password" type="password" placeholder="********"></input>
+          <button id="user-login">Log in</button>
+        </form>
+      </div>
+      <div id='customized'>
+        <span class='customized-header'></span>
+        <button id='logout'>Log out</button>
+      </div>
+    </div>
 
     <!-- Page-specific (main) content here -->
     <main class="container">

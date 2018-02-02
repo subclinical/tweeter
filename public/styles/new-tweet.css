@@ -12,6 +12,7 @@
 .new-tweet textarea {
   padding: 5px;
   width:100%;
+  resize: vertical;
 }
 
 .new-tweet span {
